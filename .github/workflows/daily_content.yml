@@ -1,0 +1,46 @@
+name: Daily Health Content Automation
+
+on:
+  schedule:
+    - cron: '0 0,14 * * *' # 7:00 PM y 9:00 AM (UTC-5) - Horas pico de Instagram
+  workflow_dispatch:
+
+jobs:
+  generate-and-post:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Install Poetry
+        run: pipx install poetry
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'poetry'
+
+      - name: Setup FFmpeg
+        uses: FedericoCarboni/setup-ffmpeg@v3
+
+      - name: Install Dependencies
+        run: poetry install
+
+      - name: Create GCP Credentials
+        env:
+          GCP_JSON: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS_JSON }}
+        run: |
+          python -c "import os, json; f=open('gcp_creds.json', 'w'); json.dump(json.loads(os.environ.get('GCP_JSON', '{}'), strict=False), f, indent=2)"
+          echo "GOOGLE_APPLICATION_CREDENTIALS=$(pwd)/gcp_creds.json" >> $GITHUB_ENV
+
+      - name: Run Daily Automation
+        env:
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          FACEBOOK_PAGE_ACCESS_TOKEN: ${{ secrets.FACEBOOK_PAGE_ACCESS_TOKEN }}
+          GCP_PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
+          GCS_BUCKET_NAME: ${{ secrets.GCS_BUCKET_NAME }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          USE_VERTEX_AI_IMAGE: "true"
+          GCP_LOCATION: "us-central1"
+        run: poetry run python flows/image_content_generator/pipeline/daily_automated_content.py

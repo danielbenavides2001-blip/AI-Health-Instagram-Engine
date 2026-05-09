@@ -1,0 +1,30 @@
+{
+  "idea": {
+    "title": "La Plancha Abdominal (Plank)",
+    "hook": "¿Qué pasa si sostienes una plancha por 45 segundos todos los días durante 2 semanas?"
+  },
+  "script": {
+    "scenes": [
+      {
+        "scene_number": 1,
+        "image_prompt": "3D render of a cartoon-style human skeleton in perfect plank position, sweat drops flying in cartoon style, looking at a melting clock like Dali style in the background, inside a transparent glass-like human body silhouette, full body visible, wide cartoonish eyes, bones are cream/ivory colored, outer body is clear glossy translucent gel-like skin, studio lighting, photorealistic 3D render",
+        "narration": "¿Qué pasa si sostienes una plancha por 45 segundos todos los días durante solo 2 semanas? Prepárate para el reto más intenso para tu core."
+      },
+      {
+        "scene_number": 2,
+        "image_prompt": "3D render of a cartoon-style human skeleton in plank position with the midsection of the skeleton glowing like a bright orange furnace, inside a transparent glass-like human body silhouette, skeleton trembling slightly with motion blur but holding the form, wide cartoonish eyes, bones are cream/ivory colored, outer body is clear glossy translucent gel-like skin, neutral gray background, studio lighting, photorealistic 3D render",
+        "narration": "El primer día sentirás que son los 45 segundos más largos de tu vida. El tiempo es relativo cuando haces plancha, pero verás cómo tu abdomen empieza a compactarse y fortalecerse."
+      },
+      {
+        "scene_number": 3,
+        "image_prompt": "3D render of a cartoon-style human skeleton standing solid like an unbreakable stone statue with a battery charging icon above, inside a transparent glass-like human body silhouette, wide cartoonish eyes, bones are cream/ivory colored, outer body is clear glossy translucent gel-like skin, neutral gray background, studio lighting, photorealistic 3D render",
+        "narration": "Para el día 14, tu metabolismo basal aumentará notablemente. Las planchas queman más grasa profunda que los abdominales tradicionales. Resultado: cintura firme y un abdomen de acero."
+      },
+      {
+        "scene_number": 4,
+        "image_prompt": "3D render of a cartoon-style human skeleton showing the correct straight-line plank posture with a golden crown on its head, inside a transparent glass-like human body silhouette, wide cartoonish eyes, pointing to the viewer, bones are cream/ivory colored, outer body is clear glossy translucent gel-like skin, neutral gray background, studio lighting, photorealistic 3D render",
+        "narration": "Tip de oro: No dejes caer la cadera ni subas demasiado el trasero. ¿Tú ya eres de hierro o todavía te tiembla todo a los 10 segundos? ¡Dímelo en los comentarios!"
+      }
+    ]
+  }
+}

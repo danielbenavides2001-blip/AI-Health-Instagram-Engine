@@ -1,0 +1,30 @@
+{
+  "idea": {
+    "title": "Jumping Jacks (Saltos de Tijera)",
+    "hook": "¿Qué pasa si haces 50 Jumping Jacks cada tarde durante 15 días?"
+  },
+  "script": {
+    "scenes": [
+      {
+        "scene_number": 1,
+        "image_prompt": "3D render of a cartoon-style human skeleton mid-air, arms and legs spread wide in a star shape with motion lines showing fast movement, inside a transparent glass-like human body silhouette, full body visible, wide cartoonish eyes, friendly smile, bones are cream/ivory colored, outer body is clear glossy translucent gel-like skin, bright afternoon sun in the background, studio lighting, photorealistic 3D render",
+        "narration": "¿Qué pasa si haces 50 Jumping Jacks cada tarde durante 15 días? Es la ráfaga de energía que tu cuerpo necesita a mitad del día."
+      },
+      {
+        "scene_number": 2,
+        "image_prompt": "3D render of a cartoon-style human skeleton with a big red heart icon beating fast inside the chest and floating yellow happy faces around, inside a transparent glass-like human body silhouette, skeleton looking electric with sparks around, wide cartoonish eyes, bones are cream/ivory colored, outer body is clear glossy translucent gel-like skin, neutral gray background, studio lighting, photorealistic 3D render",
+        "narration": "Desde el primer día, tu ritmo cardíaco se elevará al instante. Sentirás un subidón de endorfinas que mejorará tu humor y te dará energía pura en solo 60 segundos."
+      },
+      {
+        "scene_number": 3,
+        "image_prompt": "3D render of a cartoon-style human skeleton with glowing green lines representing the lymphatic system flowing upwards, inside a transparent glass-like human body silhouette, skeleton stepping on a scale showing a minus sign, wide cartoonish eyes, bones are cream/ivory colored, outer body is clear glossy translucent gel-like skin, neutral gray background, studio lighting, photorealistic 3D render",
+        "narration": "Al llegar al día 15, tu sistema linfático se activará. Saltar ayuda a eliminar toxinas estancadas. El resultado será menos retención de líquidos y te sentirás mucho menos hinchado."
+      },
+      {
+        "scene_number": 4,
+        "image_prompt": "3D render of a cartoon-style human skeleton landing softly on a fluffy cloud on its toes, inside a transparent glass-like human body silhouette, wide cartoonish eyes, holding a speech bubble asking '¿Qué piensas?', bones are cream/ivory colored, outer body is clear glossy translucent gel-like skin, neutral gray background, studio lighting, photorealistic 3D render",
+        "narration": "Advertencia: Aterriza siempre suavemente sobre la punta de los pies, nunca con el talón. ¿Tú ya saltas o todavía crees que el cardio es aburrido? ¡Cuéntame qué piensas!"
+      }
+    ]
+  }
+}

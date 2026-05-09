@@ -1,0 +1,60 @@
+{
+  "idea": {
+    "title": "El Poder de la Sentadilla Estática (Wall Sit) Pro",
+    "hook": "¿Qué pasa si haces 60 segundos de sentadilla en pared durante 30 días?"
+  },
+  "script": {
+    "scenes": [
+      {
+        "scene_number": 1,
+        "image_prompt": "Hyper-realistic 3D render of a minimalist male fitness character, solid matte red skin, powerful muscular build, completely smooth and flat face with no eyes, no nose, and no mouth, seamless egg-like head wearing sleek black over-ear headphones, wearing black athletic shorts, leaning against a dark studio wall in a 90-degree sitting pose, looking at a floating holographic stopwatch showing 60 seconds, environment: dark cinematic gym void with red rim lighting and global illumination, black studio floor with subtle reflections, ultra-high detail, Unreal Engine 5 render style, 8k, dark atmospheric mood",
+        "narration": "¿Qué pasa si haces 60 segundos de sentadilla en pared durante 30 días? Es el experimento definitivo."
+      },
+      {
+        "scene_number": 2,
+        "image_prompt": "Hyper-realistic 3D render of a minimalist male fitness character, solid matte red skin, muscular build, smooth face, headphones, in a wall sit pose, legs trembling slightly to show effort, environment: dark cinematic void, red rim lighting, ultra-high detail, 8k",
+        "narration": "El primer día parecerá fácil, pero para el segundo, tus piernas empezarán a temblar."
+      },
+      {
+        "scene_number": 3,
+        "image_prompt": "Hyper-realistic 3D render of a minimalist male fitness character, solid matte red skin, muscles in the thighs glowing with orange heat energy, wall sit pose against a dark wall, environment: dark atmospheric studio, 8k render",
+        "narration": "En la primera semana, tus cuádriceps arderán como nunca. El dolor es debilidad saliendo de tu cuerpo."
+      },
+      {
+        "scene_number": 4,
+        "image_prompt": "Hyper-realistic 3D render of a minimalist male fitness character, solid matte red skin, smooth face, headphones, close up of the leg muscles flexing intensely, environment: dark studio, cinematic lighting, 8k",
+        "narration": "Este ejercicio isométrico recluta fibras musculares que las sentadillas normales a veces ignoran."
+      },
+      {
+        "scene_number": 5,
+        "image_prompt": "Hyper-realistic 3D render of a minimalist male fitness character, solid matte red skin, smooth face, headphones, wall sit pose with a floating holographic blood pressure icon, environment: dark cinematic void, 8k",
+        "narration": "Dato científico: Mantener esta postura reduce la presión arterial de forma drástica y natural."
+      },
+      {
+        "scene_number": 6,
+        "image_prompt": "Hyper-realistic 3D render of a minimalist male fitness character, solid matte red skin, smooth face, headphones, perfect posture against the wall, spine aligned, environment: dark atmospheric studio, 8k",
+        "narration": "Para la segunda semana, tu equilibrio mejora y tu postura se vuelve mucho más sólida y erguida."
+      },
+      {
+        "scene_number": 7,
+        "image_prompt": "Hyper-realistic 3D render of a minimalist male fitness character, solid matte red skin, smooth face, headphones, performing the wall sit with extreme focus and calm, environment: dark cinematic void, 8k",
+        "narration": "Tus articulaciones se fortalecen sin el impacto de los saltos o el peso excesivo."
+      },
+      {
+        "scene_number": 8,
+        "image_prompt": "Hyper-realistic 3D render of a minimalist male fitness character, solid matte red skin, smooth face, headphones, close up of the knees perfectly aligned over the feet, environment: dark studio, red lighting, 8k",
+        "narration": "Advertencia: Mantén tus rodillas alineadas. Nunca dejes que pasen la punta de tus pies."
+      },
+      {
+        "scene_number": 9,
+        "image_prompt": "Hyper-realistic 3D render of a minimalist male fitness character, solid matte red skin, smooth face, headphones, standing up after the wall sit with powerful defined legs, environment: dark atmospheric studio, 8k",
+        "narration": "Al finalizar los 30 días, tendrás piernas de acero y una resistencia cardiovascular sorprendente."
+      },
+      {
+        "scene_number": 10,
+        "image_prompt": "Hyper-realistic 3D render of a minimalist male fitness character, solid matte red skin, smooth face, headphones, pointing to the viewer with authority, environment: dark cinematic gym void, red rim lighting, 8k",
+        "narration": "¿Tú ya dominas la pared o crees que necesitas pesas para tonificar? ¡Cuéntame en los comentarios!"
+      }
+    ]
+  }
+}

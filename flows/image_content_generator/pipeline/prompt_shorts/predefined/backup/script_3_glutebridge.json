@@ -1,0 +1,30 @@
+{
+  "idea": {
+    "title": "El Puente de Glúteo (Glute Bridge)",
+    "hook": "¿Qué pasa si haces 20 puentes de glúteo antes de desayunar durante un mes?"
+  },
+  "script": {
+    "scenes": [
+      {
+        "scene_number": 1,
+        "image_prompt": "3D render of a cartoon-style human skeleton lying on back with knees bent and hips lifted towards the ceiling in a dynamic bridge pose, inside a transparent glass-like human body silhouette, full body visible, bowl of cereal on a table in the background, digital clock showing 7:00 AM, wide cartoonish expressive eyes, friendly smile, bones are cream/ivory colored, outer body is clear glossy translucent gel-like skin, studio lighting, photorealistic 3D render",
+        "narration": "¿Qué pasa si haces 20 puentes de glúteo antes de desayunar durante un mes? Es la mejor forma de despertar tus músculos antes de que empiece tu día."
+      },
+      {
+        "scene_number": 2,
+        "image_prompt": "3D render of a cartoon-style human skeleton in bridge position with the glute bones glowing with bright orange energy sparks, inside a transparent glass-like human body silhouette, wide cartoonish eyes, giving a double thumbs up, bones are cream/ivory colored, outer body is clear glossy translucent gel-like skin, neutral gray background, studio lighting, photorealistic 3D render",
+        "narration": "En la primera semana, lograrás despertar tus músculos dormidos por estar tanto tiempo sentado. Notarás que caminar y subir escaleras se siente mucho más ligero que antes."
+      },
+      {
+        "scene_number": 3,
+        "image_prompt": "3D render of a cartoon-style human skeleton running fast with a trail of wind behind and a shield icon over the knees, inside a transparent glass-like human body silhouette, wide cartoonish eyes, bones are cream/ivory colored, outer body is clear glossy translucent gel-like skin, '20% Power Up' floating text, neutral gray background, studio lighting, photorealistic 3D render",
+        "narration": "La famosa Amnesia Glútea desaparecerá por completo. Fortalecer los glúteos no es solo estética, protege tus rodillas de futuras lesiones y te da hasta un 20% más de potencia en tus piernas."
+      },
+      {
+        "scene_number": 4,
+        "image_prompt": "3D render of a cartoon-style human skeleton sitting comfortably on a soft cloud, pointing to the comment button with a wink, inside a transparent glass-like human body silhouette, wide cartoonish eyes, bones are cream/ivory colored, outer body is clear glossy translucent gel-like skin, neutral gray background, studio lighting, photorealistic 3D render",
+        "narration": "Advertencia: Empuja siempre con los talones, no con los dedos para maximizar la activación. ¿Tú ya tienes glúteos activos o todavía crees que solo sirven para sentarse? ¡Comenta!"
+      }
+    ]
+  }
+}

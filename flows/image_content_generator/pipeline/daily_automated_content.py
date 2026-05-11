@@ -88,7 +88,7 @@ class DailyAutomator:
         
         # In Instagram, we only want Video Reels (Choice 2)
         choice = 2
-        Messenger.info("🔄 Forcing Video Reel generation for Instagram Growth (Cyber-Organic Style).")
+        Messenger.info("🔄 Forcing Video Reel generation for Instagram Growth (EnigmaIQ Brutal Reality Style).")
 
         try:
             if choice == 2:

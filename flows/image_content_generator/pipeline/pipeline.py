@@ -166,7 +166,7 @@ class Pipeline(BaseModelTool):
             ig_user_id = os.getenv("IG_USER_ID")
             access_token = os.getenv("FACEBOOK_PAGE_ACCESS_TOKEN") # Kept same env var name as it is generated from FB Developer Portal
             gcp_project_id = os.getenv("GCP_PROJECT_ID")
-            gcs_bucket_name = os.getenv("GCS_BUCKET_NAME", "instagram-auto-reels-bucket")
+            gcs_bucket_name = os.getenv("GCS_BUCKET_NAME", "enigma-reels-storage")
             
             if not ig_user_id or not access_token or not gcp_project_id:
                 raise ValueError("IG_USER_ID, FACEBOOK_PAGE_ACCESS_TOKEN, and GCP_PROJECT_ID are required.")
@@ -655,18 +655,18 @@ class Pipeline(BaseModelTool):
         Generates a catchy and long description for Instagram.
         """
         prompt = f"""
-        Eres un experto en marketing digital y redes sociales especializado en contenido de ciencia, neuropsicología y biohacking de alto impacto.
-        Genera una descripción atrapante, profesional y científica para un Instagram Reel.
+        Eres el productor principal de EnigmaIQ, una marca de "Realidad Brutal" especializada en ciencia cruda, neuropsicología y biohacking oscuro.
+        Genera una descripción para un Instagram Reel que hable con extrema autoridad, sin filtros y yendo directo al punto.
         El título del video es: "{title}"
         
         Requisitos:
-        1. Usa un gancho (hook) inicial potente que use el "tú" y genere curiosidad científica inmediata.
-        2. Explica brevemente el proceso biológico o neurológico mencionado y por qué dominarlo te da una ventaja.
-        3. Estructura el texto con párrafos cortos para facilitar la lectura.
-        4. Usa emojis estratégicos (cerebros, microscopios, rayos).
-        5. Incluye un llamado a la acción (CTA) claro para que la gente guarde o comente.
-        6. Agrega una lista de 15 hashtags virales sobre ciencia, biohacking y cerebro.
-        7. MANDATORIO: Termina con una PREGUNTA directa al usuario para generar debate en los comentarios.
+        1. Usa un gancho (hook) confrontativo que use el "tú" y haga sentir al usuario que está perdiendo el tiempo o dañando su biología.
+        2. Explica brevemente el proceso biológico mencionado con un tono oscuro pero 100% científico.
+        3. Estructura el texto con párrafos cortos y contundentes.
+        4. Usa emojis oscuros y científicos de forma escasa (🧠, 🩸, 🧬, ⚡, 👁️).
+        5. Incluye un CTA dominante (ej: "Guarda esto si no quieres olvidar la realidad").
+        6. Agrega 15 hashtags sobre biohacking, ciencia y optimización.
+        7. MANDATORIO: Termina con una PREGUNTA incómoda o directa para generar debate.
         
         Responde solo con el texto de la descripción, sin introducciones ni comentarios adicionales.
         """
@@ -674,7 +674,7 @@ class Pipeline(BaseModelTool):
             return self.text_gen.generate(prompt).strip()
         except Exception as e:
             Messenger.warning(f"AI Description generation failed: {e}. Using fallback.")
-            return f"🔥 {title}\n\nTu cuerpo es tu vehículo para toda la vida. Empieza a cuidarlo hoy.\n\n#Salud #Bienestar #Fitness #VidaSana #Nutricion #HealthyLifestyle #Habitos"
+            return f"🧬 {title}\n\nLa ignorancia biológica tiene un precio. Empieza a entender tu máquina.\n\n#Biohacking #Ciencia #Neurociencia #EnigmaIQ #RealidadBrutal #Salud #Optimizacion #Biologia"
 
     def step8_upload_to_instagram(self):
         """
@@ -700,7 +700,10 @@ class Pipeline(BaseModelTool):
 
             if not video_path.exists():
                 Messenger.error(f"Final video not found: {video_path}")
-                break
+                # Mark as UPLOADED to skip it in the next run
+                idea_obj.state = State.UPLOADED
+                self.store.save(idea_obj)
+                continue
 
             # 3. Generates optimized description
             Messenger.info("   Generating AI-optimized description...")
@@ -719,4 +722,6 @@ class Pipeline(BaseModelTool):
                 Messenger.success(f"   Idea {idea_obj.id} uploaded and marked as {State.UPLOADED}.\n")
             except Exception as e:
                 Messenger.error(f"   Failed to upload Idea {idea_obj.id}: {str(e)}")
+                # We don't break here to allow other videos in the queue to try uploading
+                # but we don't mark it as UPLOADED so it can be retried later
                 break

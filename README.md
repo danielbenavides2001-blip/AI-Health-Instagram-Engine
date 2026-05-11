@@ -3,9 +3,9 @@
 Este es el motor de automatización de contenido para la cuenta de Instagram @enigmaaiq, especializado en biohacking, fisiología y ciencia de la salud.
 
 ## 🚀 Funcionalidades
-- **Generador de Ideas:** Basado en ciencia y curiosidad fisiológica ("¿Qué pasa si...").
-- **Estilo Visual:** Cyber-Organic Biohacking (Neon Dark Mode).
-- **Publicación Automática:** Subida directa de Instagram Reels mediante la Graph API oficial.
+- **Generador de Ideas:** Estilo "Realidad Brutal" (EnigmaIQ), crudo, confrontativo y basado en biohacking avanzado.
+- **Estilo Visual:** Cinematic Medical-Futuristic (Dark Mode con Glowing Neon Orange).
+- **Publicación Automática:** Subida directa de Instagram Reels mediante la Graph API oficial (vía GCS Signed URLs).
 - **Automatización Total:** Programado para ejecutarse diariamente vía GitHub Actions.
 
 ## 🛠️ Requisitos

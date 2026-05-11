@@ -59,7 +59,7 @@ El código principal (`pipeline.py`) ejecuta 8 pasos secuenciales:
 5. **`step5_generate_subtitles()`**: Incrusta los subtítulos en pantalla usando el mapa de tiempo de Whisper.
 6. **`step6_add_background_music()`**: Toma una canción aleatoria de `resource/bg-music`, la baja de volumen y la mezcla de fondo.
 7. **`step7_rename_final_video()`**: Empaqueta todo bajo el nombre final SEO-optimizado.
-8. **`step8_upload_to_facebook()`**: Genera una descripción larga con llamados a la acción, hashtags, y publica automáticamente el archivo final mediante la API de Graph de Facebook.
+8. **`step8_upload_to_instagram()`**: Genera una descripción larga con llamados a la acción, hashtags, y publica automáticamente el archivo final mediante la API de Graph de Instagram (vía GCS Signed URL).
 
 ## 5. Resumen de Modelos en Uso
 Si alguna vez un modelo queda obsoleto y arroja un error `404 Not Found`, actualízalos en sus respectivos archivos:

@@ -1,9 +1,10 @@
 id,title,state,category
-1,El Autómata Oculto: Tu Cerebro Decide por Ti Antes de que 'Tú' Existas,COMPLETED,HealthHandler_ScienceBiohackIdea
-2,La Traición Silenciosa: La Guerra Celular Que Nadie Ve,COMPLETED,HealthHandler_ScienceBiohackIdea
-3,El Arquitecto Invisible: Cómo Tu Entorno Rescribe Las Reglas De Tu Mente,COMPLETED,HealthHandler_ScienceBiohackIdea
-4,El Ilusionista Interno: Cómo Tu Cerebro Fabrica la 'Verdad' de Quien Eres,COMPLETED,HealthHandler_ScienceBiohackIdea
-5,El Escultor Oculto: Cómo Tu Cerebro Decide Qué Versiones de Ti Mueren,COMPLETED,HealthHandler_ScienceBiohackIdea
-6,El Cronómetro Roto: Cómo Tu Ritmo Circadiano Te Traiciona Desde Adentro,COMPLETED,HealthHandler_ScienceBiohackIdea
-7,La Censura Energética: Cómo Tu Cerebro Te Vende una Realidad Falsa para Sobrevivir,COMPLETED,HealthHandler_ScienceBiohackIdea
-8,La Cárcel Dorada: Cómo Tu Cerebro Te Condena a la Repetición,COMPLETED,HealthHandler_ScienceBiohackIdea
+1,El Autómata Oculto: Tu Cerebro Decide por Ti Antes de que 'Tú' Existas,UPLOADED,HealthHandler_ScienceBiohackIdea
+2,La Traición Silenciosa: La Guerra Celular Que Nadie Ve,UPLOADED,HealthHandler_ScienceBiohackIdea
+3,El Arquitecto Invisible: Cómo Tu Entorno Rescribe Las Reglas De Tu Mente,UPLOADED,HealthHandler_ScienceBiohackIdea
+4,El Ilusionista Interno: Cómo Tu Cerebro Fabrica la 'Verdad' de Quien Eres,UPLOADED,HealthHandler_ScienceBiohackIdea
+5,El Escultor Oculto: Cómo Tu Cerebro Decide Qué Versiones de Ti Mueren,UPLOADED,HealthHandler_ScienceBiohackIdea
+6,El Cronómetro Roto: Cómo Tu Ritmo Circadiano Te Traiciona Desde Adentro,UPLOADED,HealthHandler_ScienceBiohackIdea
+7,La Censura Energética: Cómo Tu Cerebro Te Vende una Realidad Falsa para Sobrevivir,UPLOADED,HealthHandler_ScienceBiohackIdea
+8,La Cárcel Dorada: Cómo Tu Cerebro Te Condena a la Repetición,UPLOADED,HealthHandler_ScienceBiohackIdea
+9,El Fuego Subterráneo: Tu Inflamación Silenciosa Te Consume Vivo,COMPLETED,HealthHandler_ScienceBiohackIdea

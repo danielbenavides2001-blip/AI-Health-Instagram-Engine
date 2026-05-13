@@ -84,19 +84,34 @@ class DailyAutomator:
             Messenger.error(f"❌ Failed to sync Instagram history to GitHub: {e}")
 
     def run_daily_mix(self):
-        Messenger.info("🚀 Starting Daily Automated Content Picker (Instagram Reels Cycle)...")
+        Messenger.info("🚀 Starting Daily Automated Content Picker (Instagram Hybrid Cycle)...")
         
-        # In Instagram, we only want Video Reels (Choice 2)
-        choice = 2
-        Messenger.info("🔄 Forcing Video Reel generation for Instagram Growth (EnigmaIQ Brutal Reality Style).")
+        # Determinar tipo de post basado en la hora UTC
+        from datetime import datetime
+        hour = datetime.utcnow().hour
+        
+        # Horas 12, 18 -> Video (Reels)
+        # Horas 15, 21 -> Imagen (Fija)
+        if hour in [15, 21]:
+            choice = 0
+            Messenger.info(f"📸 Hora {hour} UTC: Generando IMAGEN estática para Instagram.")
+        else:
+            choice = 2
+            Messenger.info(f"🎬 Hora {hour} UTC: Generando VIDEO REEL para Instagram.")
 
         try:
+            avoid_msg = self.get_recent_topics()
             if choice == 2:
-                # Video generation
+                # Video generation (Steps 1-8)
                 Messenger.info("🎬 GENERATING NEW INSTAGRAM REEL (Steps 1-8)...")
-                avoid_msg = self.get_recent_topics()
-                # We call the main pipeline module for short videos
                 subprocess.run([sys.executable, "-m", "flows.image_content_generator.pipeline.main", "short", "all", "--avoid", avoid_msg], check=True)
+            elif choice == 0:
+                # Image generation (Steps 1, 2, 8)
+                Messenger.info("📸 GENERATING NEW INSTAGRAM IMAGE (Steps 1, 2, 8)...")
+                # En modo imagen solo necesitamos los pasos de creación y subida
+                subprocess.run([sys.executable, "-m", "flows.image_content_generator.pipeline.main", "short", "1", "--avoid", avoid_msg], check=True)
+                subprocess.run([sys.executable, "-m", "flows.image_content_generator.pipeline.main", "short", "2"], check=True)
+                subprocess.run([sys.executable, "-m", "flows.image_content_generator.pipeline.main", "short", "8"], check=True)
             
         except Exception as e:
             Messenger.error(f"Error during automated task: {e}")

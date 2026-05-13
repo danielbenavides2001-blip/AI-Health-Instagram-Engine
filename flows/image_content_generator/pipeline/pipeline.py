@@ -311,8 +311,8 @@ class Pipeline(BaseModelTool):
         total_scenes = len(script_data.scenes)
         all_tasks: List[ImageTask] = []
         for i, scene in enumerate(script_data.scenes):
-            # First and Last scenes are animated (Video) as per user request
-            is_video_scene = (i == 0 or i == total_scenes - 1)
+            # MODO AHORRO: Solo la primera escena es animada (Video de IA)
+            is_video_scene = (i == 0)
             ext = ".mp4" if is_video_scene else ".png"
             
             out_path = self.get_idea_asset_path(

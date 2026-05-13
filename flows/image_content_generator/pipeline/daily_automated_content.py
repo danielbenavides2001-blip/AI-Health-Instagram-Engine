@@ -97,11 +97,12 @@ class DailyAutomator:
                 # Video generation (Steps 1-8)
                 Messenger.info("🎬 GENERATING NEW INSTAGRAM REEL (Steps 1-8)...")
                 
-                # Use current directory as root for module discovery
+                # Use environment variable for the long avoid message to avoid command line limits
                 env = os.environ.copy()
                 env["PYTHONPATH"] = "."
+                env["ENV_AVOID"] = avoid_msg
                 
-                cmd = [sys.executable, "-m", "flows.image_content_generator.pipeline.main", "short", "all", "--avoid", avoid_msg]
+                cmd = [sys.executable, "-m", "flows.image_content_generator.pipeline.main", "short", "all"]
                 Messenger.info(f"Running command: {' '.join(cmd)}")
                 
                 subprocess.run(cmd, env=env, check=True)

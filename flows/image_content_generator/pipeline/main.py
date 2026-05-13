@@ -34,6 +34,10 @@ def main():
     # Determine output base based on orientation
     out_base = SHORT_OUT_BASE if args.orientation == VideoOrientation.SHORT else LONG_OUT_BASE
 
+    # Determine avoid list (prefer environment variable for length)
+    import os
+    avoid_msg = os.getenv("ENV_AVOID", args.avoid)
+
     pipeline = Pipeline(
         out_base=out_base,
         resource_base=RESOURCE_BASE,
@@ -43,7 +47,7 @@ def main():
     # Map Enum members to their corresponding pipeline methods
     # Note: step1 needs the avoid argument
     step_methods = {
-        PipelineStep.STEP1: lambda: pipeline.step1_generate_story(extra_avoid=args.avoid),
+        PipelineStep.STEP1: lambda: pipeline.step1_generate_story(extra_avoid=avoid_msg),
         PipelineStep.STEP2: pipeline.step2_generate_images,
         PipelineStep.STEP3: pipeline.step3_generate_audios,
         PipelineStep.STEP4: pipeline.step4_generate_videos,

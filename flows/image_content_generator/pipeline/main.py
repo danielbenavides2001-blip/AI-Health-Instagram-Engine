@@ -24,6 +24,7 @@ class PipelineStep(str, Enum):
 
 
 def main():
+    Messenger.info("🚀 Pipeline process started.")
     parser = argparse.ArgumentParser()
     parser.add_argument("orientation", type=VideoOrientation, choices=list(VideoOrientation))
     parser.add_argument("step", type=PipelineStep, choices=list(PipelineStep))
@@ -40,8 +41,9 @@ def main():
     )
 
     # Map Enum members to their corresponding pipeline methods
+    # Note: step1 needs the avoid argument
     step_methods = {
-        PipelineStep.STEP1: pipeline.step1_generate_story,
+        PipelineStep.STEP1: lambda: pipeline.step1_generate_story(extra_avoid=args.avoid),
         PipelineStep.STEP2: pipeline.step2_generate_images,
         PipelineStep.STEP3: pipeline.step3_generate_audios,
         PipelineStep.STEP4: pipeline.step4_generate_videos,

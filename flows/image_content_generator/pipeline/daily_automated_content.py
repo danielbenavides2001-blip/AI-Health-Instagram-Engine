@@ -96,7 +96,15 @@ class DailyAutomator:
             if choice == 2:
                 # Video generation (Steps 1-8)
                 Messenger.info("🎬 GENERATING NEW INSTAGRAM REEL (Steps 1-8)...")
-                subprocess.run([sys.executable, "-m", "flows.image_content_generator.pipeline.main", "short", "all", "--avoid", avoid_msg], check=True)
+                
+                # Use current directory as root for module discovery
+                env = os.environ.copy()
+                env["PYTHONPATH"] = "."
+                
+                cmd = [sys.executable, "-m", "flows.image_content_generator.pipeline.main", "short", "all", "--avoid", avoid_msg]
+                Messenger.info(f"Running command: {' '.join(cmd)}")
+                
+                subprocess.run(cmd, env=env, check=True)
             
         except Exception as e:
             Messenger.error(f"Error during automated task: {e}")

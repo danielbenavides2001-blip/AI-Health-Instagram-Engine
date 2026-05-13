@@ -404,7 +404,6 @@ class Pipeline(BaseModelTool):
                     formatted_audio = self.prompt_manager.get_audio_prompt(chunk_text)
                     self.audio_gen.text_to_speech(formatted_audio, chunk_audio_path)
                 
-                self.cost_tracker.add_audio_cost(len(chunk_text))
                 Messenger.info(f"Transcribing Batch {batch_num} for alignment...")
                 segments = self.whisper.get_transcription_segments(chunk_audio_path)
 

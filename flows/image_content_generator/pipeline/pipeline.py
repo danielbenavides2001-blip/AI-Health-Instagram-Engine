@@ -165,11 +165,13 @@ class Pipeline(BaseModelTool):
             import os
             ig_user_id = os.getenv("IG_USER_ID")
             access_token = os.getenv("FACEBOOK_PAGE_ACCESS_TOKEN") # Kept same env var name as it is generated from FB Developer Portal
-            gcp_project_id = os.getenv("GCP_PROJECT_ID")
-            gcs_bucket_name = os.getenv("GCS_BUCKET_NAME", "enigma-reels-storage")
+            gcp_project_id = os.getenv("GCP_PROJECT_ID") or "automatizacion-475715"
+            gcs_bucket_name = os.getenv("GCS_BUCKET_NAME") or "enigma-reels-storage"
             
-            if not ig_user_id or not access_token or not gcp_project_id:
-                raise ValueError("IG_USER_ID, FACEBOOK_PAGE_ACCESS_TOKEN, and GCP_PROJECT_ID are required.")
+            Messenger.info(f"🔧 Cloud Config: Project={gcp_project_id}, Bucket={gcs_bucket_name}")
+
+            if not ig_user_id or not access_token:
+                raise ValueError("IG_USER_ID and FACEBOOK_PAGE_ACCESS_TOKEN are required.")
             self._instagram = InstagramTool(
                 ig_user_id=ig_user_id, 
                 access_token=access_token,

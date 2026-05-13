@@ -105,7 +105,10 @@ class DailyAutomator:
                 cmd = [sys.executable, "-m", "flows.image_content_generator.pipeline.main", "short", "all"]
                 Messenger.info(f"Running command: {' '.join(cmd)}")
                 
-                subprocess.run(cmd, env=env, check=True)
+                result = subprocess.run(cmd, env=env, capture_output=True, text=True)
+                if result.returncode != 0:
+                    Messenger.error(f"❌ Pipeline failed (Exit {result.returncode}):\nSTDOUT: {result.stdout}\nSTDERR: {result.stderr}")
+                    sys.exit(1)
             
         except Exception as e:
             Messenger.error(f"Error during automated task: {e}")

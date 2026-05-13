@@ -2,7 +2,7 @@ name: Daily Science & Biohacking Automation
 
 on:
   schedule:
-    - cron: '0 12,15,18,21 * * *'  # 7am, 10am, 1pm, 4pm Colombia Time (2 Reels + 2 Imágenes)
+    - cron: '0 12,16,20 * * *'  # 7am, 11am, 3pm Colombia Time (3 Reels Diarios - Modo Ultra-Ahorro)
   workflow_dispatch:
     inputs:
       force_type:

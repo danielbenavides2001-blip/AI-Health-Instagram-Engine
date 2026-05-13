@@ -62,12 +62,24 @@ class InstagramTool(BaseModelTool):
         blob.upload_from_filename(str(file_path), content_type="video/mp4")
         
         # Generate a Signed URL valid for 2 hours
-        signed_url = blob.generate_signed_url(
-            version="v4",
-            expiration=datetime.timedelta(hours=2),
-            method="GET"
-        )
-        Messenger.info("   Video securely hosted. Temporary URL generated.")
+        try:
+            signed_url = blob.generate_signed_url(
+                version="v4",
+                expiration=datetime.timedelta(hours=2),
+                method="GET"
+            )
+        except Exception as e:
+            Messenger.warning(f"   Could not sign URL: {str(e)}")
+            Messenger.info("   Attempting fallback: Making blob public temporarily...")
+            try:
+                blob.make_public()
+                signed_url = blob.public_url
+                Messenger.info(f"   Fallback successful: {signed_url}")
+            except Exception as e2:
+                Messenger.error(f"   Fallback failed: {str(e2)}")
+                raise RuntimeError("Failed to generate a public URL for Meta. Ensure Service Account has 'Storage Object Admin' permissions.") from e
+
+        Messenger.info("   Video securely hosted. URL generated.")
 
         # 2. Tell Instagram to fetch the video
         Messenger.info("   Instructing Instagram servers to download the video...")

@@ -12,6 +12,7 @@ from flows.image_content_generator.pipeline.prompt_shorts.health import (
     constants as health_constants,
 )
 from flows.image_content_generator.pipeline.prompt_shorts.health.models import HealthHandler, ScienceBiohackIdea
+from flows.image_content_generator.pipeline.prompt_shorts.what_if.models import WhatIfHandler
 from tools.common.messenger import Messenger
 from tools.text_generation.gemini import GeminiTextGenerator
 
@@ -23,7 +24,7 @@ class PromptManagerShorts(BasePromptManager):
     AUDIO_PROMPT: str = health_constants.AUDIO_PROMPT
 
     CATEGORIES: Sequence[Type[CategoryHandler]] = [
-        HealthHandler,
+        WhatIfHandler,
     ]
 
     def generate_full_story(
@@ -68,7 +69,7 @@ class PromptManagerShorts(BasePromptManager):
             avoid_msg = f"\n\n🚨 **REGLA CRÍTICA DE NO REPETICIÓN:** 🚨\n{extra_avoid}"
         elif titles_to_avoid:
             avoid_list_str = "\n- ".join(titles_to_avoid)
-            avoid_msg = f"\n\n**REGLA CRÍTICA Y ESTRICTA: BAJO NINGÚN CONCEPTO repitas los hábitos o debilidades mediocres de los videos que ya creaste. Debes atacar una DEBILIDAD COMPLETAMENTE DISTINTA a estas:**\n- {avoid_list_str}\n\n**IMPORTANTE:** Rota entre los 4 PILARES (Físico, Mental, Rutina, Entorno). Destruye excusas nuevas en cada ejecución."
+            avoid_msg = f"\n\n**REGLA CRÍTICA Y ESTRICTA DE NO REPETICIÓN:**\nNo repitas NINGUNA de las siguientes ideas o escenarios hipotéticos:\n- {avoid_list_str}\n\n**IMPORTANTE:** Rota entre los diferentes pilares (Biología, Física, Entorno, Alimentos). Cada video debe explorar un escenario '¿Qué pasaría si...?' completamente único y visualmente impactante."
 
         idea_data = content_gen.generate_text(config.idea_prompt + avoid_msg, config.idea_model)
 

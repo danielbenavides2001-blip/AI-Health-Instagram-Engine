@@ -304,17 +304,20 @@ class Pipeline(BaseModelTool):
         use_vertex = os.getenv("USE_VERTEX_AI_IMAGE", "false").lower() == "true"
         ext = ".png"
         
+        total_scenes = len(script_data.scenes)
         all_tasks: List[ImageTask] = []
         for i, scene in enumerate(script_data.scenes):
-            # Use only static images (Imagen 3) to leverage the approved quota
-            ext = ".png"
+            # First and Last scenes are animated (Video) as per user request
+            is_video_scene = (i == 0 or i == total_scenes - 1)
+            ext = ".mp4" if is_video_scene else ".png"
             
             out_path = self.get_idea_asset_path(
                 idea_obj.id, self.IMAGES_DIR, f"scene_{i+1}{ext}"
             )
             
-            # Also check if .mp4 exists to avoid duplicates
-            alt_path = out_path.with_suffix(".mp4")
+            # Check for alternative extension to avoid redundant generation
+            alt_ext = ".png" if is_video_scene else ".mp4"
+            alt_path = out_path.with_suffix(alt_ext)
             
             if out_path.exists():
                 Messenger.info(f"Skipping Scene {i+1}: {out_path.name} already exists.")
@@ -328,7 +331,7 @@ class Pipeline(BaseModelTool):
                 ImageTask(
                     prompt=scene.image_prompt, 
                     output_path=out_path,
-                    is_video=False
+                    is_video=is_video_scene
                 )
             )
 

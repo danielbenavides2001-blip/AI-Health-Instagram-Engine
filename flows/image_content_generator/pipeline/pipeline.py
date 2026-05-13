@@ -163,24 +163,14 @@ class Pipeline(BaseModelTool):
     def instagram(self) -> InstagramTool:
         if self._instagram is None:
             import os
-            from google.cloud import storage
             ig_user_id = os.getenv("IG_USER_ID")
             access_token = os.getenv("FACEBOOK_PAGE_ACCESS_TOKEN")
             
-            # DIAGNOSTIC: List visible buckets to verify permissions
-            try:
-                storage_client = storage.Client()
-                Messenger.info(f"🔍 Diagnostic: Default Project={storage_client.project}")
-                buckets = list(storage_client.list_buckets())
-                Messenger.info(f"🔍 Diagnostic: Visible Buckets={[b.name for b in buckets]}")
-            except Exception as e:
-                Messenger.warning(f"🔍 Diagnostic: Failed to list buckets: {e}")
-
-            # FORCE VALID PRODUCTION VALUES
+            # VALID PRODUCTION VALUES (Ensures stability in GitHub Actions)
             gcp_project_id = "automatizacion-475715"
             gcs_bucket_name = "enigma-reels-storage"
             
-            Messenger.info(f"🔧 Production Cloud Config: Project={gcp_project_id}, Bucket={gcs_bucket_name}")
+            Messenger.info(f"🔧 Instagram Production Config: Project={gcp_project_id}, Bucket={gcs_bucket_name}")
 
             if not ig_user_id or not access_token:
                 raise ValueError("IG_USER_ID and FACEBOOK_PAGE_ACCESS_TOKEN are required.")

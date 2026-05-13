@@ -1,10 +1,8 @@
 name: Daily Health Content Automation
 
 on:
-  push:
-    branches: [ main ]
   schedule:
-    - cron: '0 0,14 * * *' # 7:00 PM y 9:00 AM (UTC-5) - Horas pico de Instagram
+    - cron: '0 0,14,18 * * *' # 7:00 PM, 9:00 AM y 1:00 PM (UTC-5)
   workflow_dispatch:
 
 jobs:
